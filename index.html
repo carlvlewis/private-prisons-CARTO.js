@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--Edit the title of the page-->
+    <title>U.S. Private Prisons by Owner and State Incarceration Rate, 2012</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="css/makeitresponsive.css">
+    <!--Switch between the different themes changing the stylesheet below - light-theme.css |dark-theme.css -->
+    <link rel="stylesheet" href="css/light-theme.css">
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+  <a href="https://github.com/carlvlewis"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+    
+    <div class="row">
+      <div class="col span4 empty"><p></p></div>
+      <div class="col span12 context subheader">
+        <!--Link to your personal website, your blog or your twitter account--><div><p>First in a series of analyses of private-prisons in America ● Jul. 16, 2014 ● <a href="http://carlvlewis.net">View other tutorials and examples on my blog.</a></p>
+        
+      </div>
+        
+      </div>
+
+    <!--In the paragraph below give an introduction to your visualization-->
+    <div class="row">
+      <div class="col span4 empty"><p></p></div>
+      <div class="col span12">
+        <h1>Private Prisons, Public Dollars</h1>
+        <h2>What Happens When For-Profit Companies Make Money off Inmate Totals</h2>
+        <h4>States with private-prison contracts also have significantly higher incarceration rates,new data shows.</h4>
+        <p>By <a href="http://carlvlewis.net">Carl V. Lewis</a> ● Jul. 16, 2014</p>
+        
+        <p>While much of the national debate over the mass privatization of state and federal prison systems in recent years has focused on <a href="http://www.nytimes.com/2011/05/19/us/19prisons.html?pagewanted=all&_r=0">cost per inmate</a> – whether private prisons save public funds or are costing taxpayers more, as most economists believe – few mainstream narratives have surfaced concerning other, less quantifiable effects of prison privitization.  For example, a helpful start might be to see if any correlation exists between incarceration rates in areas with private prisons and areas with public prisons.<a href=''> As it turns out, <a href="http://www.motherjones.com/mojo/2013/09/private-prisons-occupancy-quota-cca-crime">five companies alone</a> have a monopoly on the private prison industry, each raking in millions of dollars of annual revenue in the business of incarceration.</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="map" id="map"></div>
+    </div>
+    <!--Copy and paste the "row" div below a second, third, or fourth time to create content blocks-->
+    <div class="row">
+    
+      <div class="col span4 titleBlock">
+      
+        <h3>Map Description</h3>
+      </div>
+      <div class="col span12">
+        <p><em>In the choropleth, color-blind friendly map above, state colors indicate state incarceration rates, which were calculated by the number of incarcerated individuals divided by the total state population estimate for 2012. The darker red a state is colored, the higher its incarceration rate. Hover over any state to see more detailed information. The colored points overlaying the states indicate the locations of all 137 state-contracted private-prisons in the U.S., with different colors representing which of the five private-prison megacompanies owns the jail. Zoom in to get a closer view of the desnsity of locations.</em></p><p>The map  visualizes two different datasets – 2012 incarceration rates by state and the locations and owners of all 137 private prisons nationwide. A preliminary analysis of these two variables taken together would, in fact, lend credence to the claim that private prisons incarcerate more people on average than their public counterparts do, presumably because they have a greater financial incentive to keep prisoner occupancy rates high becausee <em>Zoom in to the map to  the regions with the highest density of locations. What do you notice about those states?</p></em> 
+        <p>Of course, that doesn't necessarily mean other confounding variables couldn't be at least partially responsible for the correlation, which although for this explanatory variable is fairly high at .72, certainly doesn't prove causation. There could very well be <a href="http://abcnews.go.com/US/hopes-turning-point-ferguson-clashes/story?id=25047905">deeper systemic issues at work in the justice system</a> or social attitudes in states with high prison populations, which tend to be concentrated in the southeastern part of the country and especially Texas. Or, it could always be a chicken-and-egg scenario; high crime rates and prison populations in those states may make it more efficient for cash-stapped state-budgets to outstource imprisonment.</p>
+        <p>
+        Applying <a href-"http://www.stat.yale.edu/Courses/1997-98/101/linmult.htm"> multiple linear regression</a> using Python, as <a href="https://generalassemb.ly/instructors/gavin-hackeling/2839">Gavin Hackeling</a> has recently taught me how to do, I should be able to increase the correlation rate closer to the point of <em>cautious</em> causation. In my next post, I'll go over step-by-step this process, so that other data journalists can bolster the accuracy and meaning of their visualizations based upon objective statistical modeling.</p>
+      </div>
+    </div>
+
+    <!--This is an example of a second content block-->
+    <div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Sources</h3>
+      </div>
+      <div class="col span12">
+        <li><p>Bureau of Justice Statistics, <a href="http://www.bjs.gov/index.cfm?ty=tp&tid=133">"Correctional Populations in the United States, 2012." </a>(<a href="http://www.bjs.gov/content/pub/sheets/cpus12.zip">csv</a>)</p>
+        </li><li>        <p>U.S. Census Bureau, <a href="http://census.gov">2012 Population Estimates.</a></p></li><li><p>Enigma.io, Prison Facilties. (<a href="https://www.dropbox.com/s/arkyewfj6z5psa6/enigma-enigma-prisons-all-facilities-7215ee9c7d9dc229d2921a40e899ec5f%20%281%2906.03.01%20AM.csv">csv</a>)</p></li></div>
+        <div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Methodology</h3> </div>
+        <div class="col span12">
+<p>Available on my blog <a href="http://carlvlewis.net/using-cartodb-2-0-geocode-private-prisons-comparison-state-state-incarceration-rates/">here.</a></p>
+        </div></div>
+        <div style="float: right"><table><tr><td><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://carlvlewis.net/private-prisons"  >Tweet</a><script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script></td><td><div class="g-plusone" data-size="medium"   data-href="http://carlvlewis.net/private-prisons"></div><script type="text/javascript">(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script></td><td><iframe src="//www.facebook.com/plugins/like.php?href=http://carlvlewis.net/private-prisons&send=false&layout=button_count&width=120&show_faces=true&font&colorscheme=light&action=like&height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:20px;" allowTransparency="true"></iframe></td></tr></table></p></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col span4 empty"><p></p></div>
+      <div class="col span12 context footer">d     Built by <a href="http://carlvlewis.net">@carlvlewis</a> with spreadsheets, geocoders, JavaScript, CartoDB and love. <a href="http://carlvlewis.net">See more like this on my blog.</a>
+      </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&v=3.8"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script type="text/javascript"> 
+window.onload = function() {
+      cartodb.createVis('map', 'https://carlvlewis.cartodb.com/api/v2/viz/d785d444-0cb0-11e4-b8bc-0e230854a1cb/viz.json');
+}    
+</script>
+
+  </body>
+</html>
